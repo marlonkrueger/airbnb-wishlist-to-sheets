@@ -1,0 +1,8 @@
+structure.txt
+
+airbnb-wishlist-to-sheets/
+├── manifest.json
+├── popup.html
+├── popup.js
+├── background.js
+└── content.js

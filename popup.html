@@ -1,0 +1,115 @@
+<!--
+  Airbnb Wishlist to Google Sheets Extension
+  Popup HTML (popup.html)
+  
+  This file defines the user interface for the extension popup that appears
+  when the user clicks on the extension icon in the browser toolbar.
+  It contains the structure and styling for the authentication and extraction controls.
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Airbnb Wishlist to Google Sheets</title>
+    <style>
+      /* Base styles for the popup container */
+      body {
+        width: 300px;
+        padding: 10px;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Center text elements */
+      p,
+      h2 {
+        text-align: center;
+      }
+
+      /* Style for buttons */
+      button {
+        margin-top: 10px;
+        padding: 8px 16px;
+        background-color: #ff5a5f; /* Airbnb brand color */
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      /* Button hover effect */
+      button:hover {
+        background-color: #ff3b3f; /* Darker shade for hover state */
+      }
+
+      /* Status message styling */
+      .status {
+        margin-top: 10px;
+        padding: 8px;
+        border-radius: 4px;
+        text-align: center;
+      }
+
+      /* Success status */
+      .success {
+        background-color: #dff2bf;
+        color: #4f8a10;
+      }
+
+      /* Error status */
+      .error {
+        background-color: #ffbaba;
+        color: #d8000c;
+      }
+
+      /* Container for spreadsheet button, hidden by default */
+      #spreadsheetUrl {
+        margin-top: 10px;
+        display: none;
+      }
+
+      /* Specific styling for the open spreadsheet button */
+      #openSpreadsheet {
+        margin-bottom: 10px;
+      }
+
+      /* Secondary button styling with different color */
+      .secondary-button {
+        background-color: #008489; /* Different color to distinguish it */
+      }
+
+      /* Secondary button hover effect */
+      .secondary-button:hover {
+        background-color: #006c70;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Main heading -->
+    <h2>Airbnb Wishlist to Google Sheets</h2>
+    <p>Extract your Airbnb wishlist data to Google Sheets</p>
+
+    <!-- Authentication UI section, shown by default -->
+    <div id="loginStatus">
+      <button id="authorize">Sign in with Google</button>
+    </div>
+
+    <!-- Extraction controls section, hidden by default until authenticated -->
+    <div id="extractionControls" style="display: none">
+      <button id="extract">Extract Wishlist Data</button>
+
+      <!-- Button to open created spreadsheet, shown after successful extraction -->
+      <div id="spreadsheetUrl" style="display: none">
+        <button id="openSpreadsheet" class="secondary-button">
+          Open Spreadsheet
+        </button>
+      </div>
+    </div>
+
+    <!-- Status message display area, hidden by default -->
+    <div id="status" class="status" style="display: none"></div>
+
+    <!-- Include popup JavaScript -->
+    <script src="popup.js"></script>
+  </body>
+</html>
